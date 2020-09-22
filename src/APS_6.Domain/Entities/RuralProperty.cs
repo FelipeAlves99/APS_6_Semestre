@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace APS_6.Domain.Entities
 {
     public class RuralProperty
     {
+        public int Id { get; set; }
         public string CompanyName { get; set; }
-        public List<Address> Address { get; set; }
+        public List<Pesticide> Pesticides { get; set; }
+        public List<Address> Addresses { get; set; }
+        public List<Tickets> Tickets { get; set; }
     }
 }
