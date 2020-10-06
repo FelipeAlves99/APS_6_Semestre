@@ -2,7 +2,7 @@
 
 namespace APS_6.Domain.Entities
 {
-    public class Tickets
+    public class Ticket
     {
         public int Id { get; set; }
         public DateTime CreationDate { get; set; }
