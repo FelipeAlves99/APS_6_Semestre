@@ -6,4 +6,9 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\APS_6.Domain\APS_6.Domain.csproj" />
+    <ProjectReference Include="..\APS_6.Infra.Data.Sql\APS_6.Infra.Data.Sql.csproj" />
+  </ItemGroup>
+
 </Project>

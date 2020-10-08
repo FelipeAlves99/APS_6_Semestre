@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using APS_6.Domain.Entities;
+using APS_6.Domain.Enums;
+using APS_6.Domain.Interfaces.Repository;
+using APS_6.Infra.Data.Sql.Repository;
+using System;
 using System.Windows.Forms;
 
 namespace APS.ClientCore
@@ -19,7 +16,16 @@ namespace APS.ClientCore
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Test");
+            try
+            {
+                User user = new User("test", "test", "test", EAccessLevel.Admin);
+                UserRepository repo = new UserRepository();
+                repo.AddUser(user);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
