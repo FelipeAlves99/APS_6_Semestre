@@ -1,7 +1,6 @@
 ﻿using APS_6.Domain.Entities;
 using APS_6.Domain.Enums;
-using APS_6.Domain.Interfaces.Repository;
-using APS_6.Infra.Data.Sql.Repository;
+using APS_6.Domain.Interfaces.Services;
 using System;
 using System.Windows.Forms;
 
@@ -9,8 +8,11 @@ namespace APS.ClientCore
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        private readonly IUserService _userService;
+
+        public Form1(IUserService userService)
         {
+            _userService = userService;
             InitializeComponent();
         }
 
@@ -18,9 +20,8 @@ namespace APS.ClientCore
         {
             try
             {
-                User user = new User("test", "test", "test", EAccessLevel.Admin);
-                UserRepository repo = new UserRepository();
-                repo.AddUser(user);
+                User user = new User("test2", "test2", "test2", EAccessLevel.Analyst);
+                _userService.PostUser(user);               
             }
             catch(Exception ex)
             {
