@@ -17,7 +17,7 @@ namespace APS_6.Infra.Data.Sql.Data.Context
 
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
-            
+
         //}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
