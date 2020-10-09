@@ -2,6 +2,7 @@
 using APS_6.Domain.Interfaces.Repository;
 using APS_6.Infra.Data.Sql.Data.Context;
 using System;
+using System.Collections.Generic;
 
 namespace APS_6.Infra.Data.Sql.Repository
 {
@@ -14,10 +15,30 @@ namespace APS_6.Infra.Data.Sql.Repository
         //    //_context = context;
         //}
 
-        public void AddUser(User user)
+        public void PostUser(User user)
         {
             _context.Set<User>().Add(user);
             _context.SaveChanges();
+        }
+
+        public void PatchUser(User user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public User GetUserByUserName(string userName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<User> GetAllUsers()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteUser(User user)
+        {
+            throw new NotImplementedException();
         }
     }
 }
