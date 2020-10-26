@@ -2,9 +2,8 @@
 
 namespace APS_6.Domain.Entities
 {
-    public class RuralProperty
+    public class RuralProperty : Entity
     {
-        public int Id { get; set; }
         public string CompanyName { get; set; }
         public List<Pesticide> Pesticides { get; set; }
         public List<Address> Addresses { get; set; }
