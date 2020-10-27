@@ -1,19 +1,20 @@
 ﻿using APS_6.Domain.Entities;
 using APS_6.Domain.Interfaces.Repository;
 using APS_6.Infra.Data.Sql.Data.Context;
-using System;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace APS_6.Infra.Data.Sql.Repository
 {
     public class UserRepository : IUserRepository
     {
-        private readonly APSContext _context = new APSContext();
+        private readonly APSContext _context;
 
-        //public UserRepository(APSContext context)
-        //{
-        //    //_context = context;
-        //}
+        public UserRepository(APSContext context)
+        {
+            _context = context;
+        }
 
         public void PostUser(User user)
         {
@@ -23,22 +24,30 @@ namespace APS_6.Infra.Data.Sql.Repository
 
         public void PatchUser(User user)
         {
-            throw new NotImplementedException();
+            _context.Attach(user);
+            _context.Entry(user).State = EntityState.Modified;
+            _context.SaveChanges();
         }
 
         public User GetUserByUserName(string userName)
         {
-            throw new NotImplementedException();
+            return _context.Users
+                .AsNoTracking()
+                .Where(u => u.UserName == userName)
+                .FirstOrDefault();
         }
 
         public IEnumerable<User> GetAllUsers()
         {
-            throw new NotImplementedException();
+            return _context.Users
+                .AsNoTracking()
+                .ToList();
         }
 
-        public void DeleteUser(User user)
+        public void DeleteUser(string userName)
         {
-            throw new NotImplementedException();
+            _context.Set<User>().Remove(GetUserByUserName(userName));
+            _context.SaveChanges();
         }
     }
 }

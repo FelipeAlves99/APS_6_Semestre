@@ -14,24 +14,24 @@ namespace APS_6.Domain.Services
             _repository = repository;
         }
 
-        public void DeleteUser(User user)
+        public void DeleteUser(string userName)
         {
-            throw new System.NotImplementedException();
+            _repository.DeleteUser(userName);
         }
 
         public IEnumerable<User> GetAllUsers()
         {
-            throw new System.NotImplementedException();
+            return _repository.GetAllUsers();
         }
 
         public User GetUserByUserName(string userName)
         {
-            throw new System.NotImplementedException();
+            return _repository.GetUserByUserName(userName);
         }
 
         public void PatchUser(User user)
         {
-            throw new System.NotImplementedException();
+            _repository.PatchUser(user);
         }
 
         public void PostUser(User user)
