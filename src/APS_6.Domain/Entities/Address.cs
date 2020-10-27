@@ -1,6 +1,6 @@
 ﻿namespace APS_6.Domain.Entities
 {
-    public class Address
+    public class Address : Entity
     {
         public string Street { get; set; }
         public int BuildingNumber { get; set; }
