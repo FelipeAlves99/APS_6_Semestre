@@ -15,6 +15,14 @@ namespace APS_6.Infra.Data.Sql.Data.Context
 
         public DbSet<User> Users { get; set; }
 
+        public DbSet<Ticket> Tickets { get; set; }
+
+        public DbSet<RuralProperty> RuralProperties { get; set; }
+
+        public DbSet<Pesticide> Pesticides { get; set; }
+
+        public DbSet<Address> Addresses { get; set; }
+
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
 
