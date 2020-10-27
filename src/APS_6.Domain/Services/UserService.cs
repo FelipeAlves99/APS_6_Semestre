@@ -14,9 +14,9 @@ namespace APS_6.Domain.Services
             _repository = repository;
         }
 
-        public void DeleteUser(User user)
+        public void DeleteUser(string userName)
         {
-            _repository.DeleteUser(user);
+            _repository.DeleteUser(userName);
         }
 
         public IEnumerable<User> GetAllUsers()

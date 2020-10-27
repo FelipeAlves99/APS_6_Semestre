@@ -9,6 +9,6 @@ namespace APS_6.Domain.Interfaces.Repository
         void PatchUser(User user);        
         User GetUserByUserName(string userName);        
         IEnumerable<User> GetAllUsers();        
-        void DeleteUser(User user);        
+        void DeleteUser(string userName);        
     }
 }
