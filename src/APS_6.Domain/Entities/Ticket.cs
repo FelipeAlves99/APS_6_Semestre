@@ -21,7 +21,7 @@ namespace APS_6.Domain.Entities
         public double Value { get; private set; }
         public string Description { get; private set; }
         public ETicketStatus Status { get; private set; }
-        public int CompanyId { get; private set; }
+        public Guid CompanyId { get; private set; }
         public RuralProperty RuralProperty { get; private set; }
 
         //TODO: change the true value to add notification
