@@ -1,7 +1,15 @@
-﻿namespace APS_6.Domain.Entities
+﻿using Flunt.Notifications;
+using System;
+
+namespace APS_6.Domain.Entities
 {
-    public abstract class Entity
+    public abstract class Entity : Notifiable
     {
-        public int Id { get; protected set; }
+        protected Entity()
+        {
+            Id = Guid.NewGuid();
+        }
+
+        public Guid Id { get; protected set; }
     }
 }
