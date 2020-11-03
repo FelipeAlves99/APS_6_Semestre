@@ -1,11 +1,11 @@
-using System;
-using System.Windows.Forms;
 using APS_6.Domain.Interfaces.Repository;
 using APS_6.Domain.Interfaces.Services;
 using APS_6.Domain.Services;
 using APS_6.Infra.Data.Sql.Repository;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
+using System.Windows.Forms;
 
 namespace APS.ClientCore
 {
@@ -27,6 +27,10 @@ namespace APS.ClientCore
                     services.AddScoped<Form1>();
                     services.AddScoped<IUserService, UserService>();
                     services.AddScoped<IUserRepository, UserRepository>();
+                    services.AddScoped<ITicketService, TicketService>();
+                    services.AddScoped<ITicketRepository, TicketRepository>();
+                    services.AddScoped<IPesticideService, PesticideService>();
+                    services.AddScoped<IPesticideRepository, PesticideRepository>();
                 });
 
             var host = builder.Build();
