@@ -6,7 +6,6 @@ namespace APS_6.Domain.Entities
     {
         public User(string userName, string password, string name, EAccessLevel permission)
         {
-
             UserName = userName;
             Password = password;
             Name = name;

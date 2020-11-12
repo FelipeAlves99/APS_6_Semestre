@@ -5,7 +5,7 @@ namespace APS_6.Domain.Entities
 {
     public class Ticket : Entity
     {
-        public Ticket(double value, string description, int companyId, RuralProperty ruralProperty)
+        public Ticket(double value, string description, Guid companyId, RuralProperty ruralProperty)
         {
             CreationDate = DateTime.Now;
             DeadlineDate = DateTime.Now.AddMonths(6);
@@ -24,7 +24,6 @@ namespace APS_6.Domain.Entities
         public Guid CompanyId { get; private set; }
         public RuralProperty RuralProperty { get; private set; }
 
-        //TODO: change the true value to add notification
         public void UpdateTicketStatus(ETicketStatus status)
         {
             if (Status == ETicketStatus.Closed)
