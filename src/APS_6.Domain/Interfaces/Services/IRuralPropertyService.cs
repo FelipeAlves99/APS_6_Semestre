@@ -8,6 +8,6 @@ namespace APS_6.Domain.Interfaces.Services
         void PostRuralProperty(RuralProperty ruralProperty);
         void PutRuralProperty(RuralProperty ruralProperty);
         IEnumerable<RuralProperty> GetAllRuralProperty();
-        RuralProperty GetPRuralPropertyByName(string name);
+        RuralProperty GetRuralPropertyByName(string name);
     }
 }
