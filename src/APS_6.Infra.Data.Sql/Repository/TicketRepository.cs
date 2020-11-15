@@ -32,7 +32,7 @@ namespace APS_6.Infra.Data.Sql.Repository
         public IEnumerable<Ticket> GetAllTicketsByCompany(Guid companyId)
             => _context.Tickets
                 .AsNoTracking()
-                .Where(t => t.CompanyId == companyId)
+                .Where(t => t.RuralProperty.Id == companyId)
                 .Include(t => t.RuralProperty)
                 .ToList();
 

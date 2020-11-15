@@ -1,7 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-using System.IO;
-
-namespace APS_6.Infra.Data.Sql.Data
+﻿namespace APS_6.Infra.Data.Sql.Data
 {
     public class AppConfiguration
     {

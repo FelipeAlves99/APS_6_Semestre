@@ -19,20 +19,23 @@ namespace APS_6.Infra.Data.Sql.Repository
         public IEnumerable<Pesticide> GetAllPesticides()
             => _context.Pesticides
                 .AsNoTracking()
-                .Include(p => p.RuralProperty)
+                .Include(p => p.PesticideRuralProperties)
+                .ThenInclude(pr => pr.RuralProperty)
                 .ToList();
 
         public Pesticide GetPesticideByName(string name)
             => _context.Pesticides
                 .AsNoTracking()
-                .Include(p => p.RuralProperty)
+                .Include(p => p.PesticideRuralProperties)
+                .ThenInclude(pr => pr.RuralProperty)
                 .FirstOrDefault(p => p.Name == name);
 
         public Pesticide GetPesticidesByCompanyName(string name)
             => _context.Pesticides
                 .AsNoTracking()
-                .Include(p => p.RuralProperty)
-                .FirstOrDefault(p => p.RuralProperty.CompanyName == name);
+                .Include(p => p.PesticideRuralProperties)
+                .ThenInclude(pr => pr.RuralProperty.CompanyName == name)
+                .FirstOrDefault();
 
         public void PostPesticide(Pesticide pesticide)
         {

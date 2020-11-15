@@ -19,14 +19,16 @@ namespace APS_6.Infra.Data.Sql.Repository
         public IEnumerable<RuralProperty> GetAllRuralProperty()
             => _context.RuralProperties
                 .AsNoTracking()
-                .Include(r => r.Pesticides)
+                .Include(r => r.PesticideRuralProperties)
+                .ThenInclude(pr => pr.Pesticide)
                 .Include(r => r.Tickets)
                 .ToList();
 
         public RuralProperty GetRuralPropertyByName(string name)
             => _context.RuralProperties
                 .AsNoTracking()
-                .Include(r => r.Pesticides)
+                .Include(r => r.PesticideRuralProperties)
+                .ThenInclude(pr => pr.Pesticide)
                 .Include(r => r.Tickets)
                 .FirstOrDefault(p => p.CompanyName == name);
 
