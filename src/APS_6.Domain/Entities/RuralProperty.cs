@@ -4,9 +4,9 @@ namespace APS_6.Domain.Entities
 {
     public class RuralProperty : Entity
     {
-        public RuralProperty(string companyName, string street, int buildingNumber, string district,
-            string postalCode, string city, string state, IEnumerable<Pesticide> pesticides,
-            IEnumerable<Ticket> tickets)
+        public RuralProperty(string companyName, string street, int buildingNumber,
+            string district, string postalCode, string city, string state,
+            ICollection<PesticideRuralProperty> pesticideRuralProperties, ICollection<Ticket> tickets)
         {
             CompanyName = companyName;
             Street = street;
@@ -15,9 +15,12 @@ namespace APS_6.Domain.Entities
             PostalCode = postalCode;
             City = city;
             State = state;
-            Pesticides = pesticides;
+            PesticideRuralProperties = pesticideRuralProperties;
             Tickets = tickets;
         }
+
+        private RuralProperty()
+        { }
 
         public string CompanyName { get; set; }
         public string Street { get; set; }
@@ -26,7 +29,7 @@ namespace APS_6.Domain.Entities
         public string PostalCode { get; set; }
         public string City { get; set; }
         public string State { get; set; }
-        public IEnumerable<Pesticide> Pesticides { get; set; }
-        public IEnumerable<Ticket> Tickets { get; set; }
+        public ICollection<PesticideRuralProperty> PesticideRuralProperties { get; set; }
+        public ICollection<Ticket> Tickets { get; set; }
     }
 }
