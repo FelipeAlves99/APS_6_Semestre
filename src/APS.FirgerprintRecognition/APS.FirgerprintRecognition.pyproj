@@ -11,6 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>APS.FirgerprintRecognition</Name>
     <RootNamespace>APS.FirgerprintRecognition</RootNamespace>
+    <InterpreterId>MSBuild|APS-env|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,6 +23,41 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="APS.FirgerprintRecognition.py" />
+    <Compile Include="enhance\frequest.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="enhance\image_enhance.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="enhance\ridge_filter.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="enhance\ridge_freq.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="enhance\ridge_orient.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="enhance\ridge_segment.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="APS-env\">
+      <Id>APS-env</Id>
+      <Version>3.7</Version>
+      <Description>APS-env (Python 3.7 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="requirements.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="enhance\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
