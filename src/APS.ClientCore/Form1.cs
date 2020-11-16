@@ -1,5 +1,7 @@
 ﻿using APS_6.Domain.Interfaces.Services;
 using System;
+using System.Diagnostics;
+using System.Text;
 using System.Windows.Forms;
 
 namespace APS.ClientCore
@@ -47,6 +49,48 @@ namespace APS.ClientCore
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var processInfo = new ProcessStartInfo("cmd.exe", "/c systeminfo")
+            {
+                CreateNoWindow = true,
+                UseShellExecute = false,
+                RedirectStandardError = true,
+                RedirectStandardOutput = true,
+                WorkingDirectory = @"C:\Users\FELIPEDECARVALHOALVE\repos\APS_6_Semestre\src\APS.FirgerprintRecognition"
+            };
+
+            StringBuilder sb = new StringBuilder();
+            Process p = Process.Start(processInfo);
+            p.OutputDataReceived += (sender, args) => sb.AppendLine(args.Data);
+            p.BeginOutputReadLine();
+            p.WaitForExit();
+            MessageBox.Show(sb.ToString());
+
+
+
+            //try
+            //{
+            //    var start = new ProcessStartInfo();
+            //    start.UseShellExecute = false;
+            //    start.RedirectStandardOutput = true;
+            //    start.RedirectStandardInput = true;
+            //    start.Arguments = "python APS.FirgerprintRecognition.py -un user_2 -fp dataset/user_1/1.png";
+            //    start.FileName = "cmd.exe";
+
+            //    using (Process process = Process.Start(start))
+            //    {
+            //        using (StreamReader reader = process.StandardOutput)
+            //        {
+            //            string result = reader.ReadToEnd();
+            //            MessageBox.Show(result);
+            //        }
+            //        process.WaitForExit();
+            //    }
+            //}
+            //catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
     }
 }
