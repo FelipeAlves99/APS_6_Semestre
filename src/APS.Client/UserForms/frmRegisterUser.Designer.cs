@@ -120,6 +120,7 @@ namespace APS.Client.UserForms
             // 
             // cmbPermission
             // 
+            this.cmbPermission.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPermission.FormattingEnabled = true;
             this.cmbPermission.Location = new System.Drawing.Point(36, 216);
             this.cmbPermission.Name = "cmbPermission";
@@ -141,9 +142,11 @@ namespace APS.Client.UserForms
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmRegisterUser";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de usuário";
             this.Load += new System.EventHandler(this.frmRegisterUser_Load);
             this.ResumeLayout(false);
