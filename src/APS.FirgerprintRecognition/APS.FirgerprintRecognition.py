@@ -17,13 +17,13 @@ args = vars(ap.parse_args())
 
 def main():
     image_name = args["fingerprint_path"]
-    #print(image_name)
     fingerprint_img = cv2.imread(image_name, cv2.IMREAD_GRAYSCALE)
+    #print(fingerprint_img)
     kp1, des1 = get_descriptors(fingerprint_img)    
 
-    image_name = "dataset/" + args["user_name"] + "/" + str(randrange(5)) + ".png"
-    #print(image_name)
+    image_name = "C:/Users/FELIPEDECARVALHOALVE/repos/APS_6_Semestre/src/APS.FirgerprintRecognition/dataset/" + args["user_name"] + "/" + str(randrange(5)) + ".png"
     user_fingerprint = cv2.imread(image_name, cv2.IMREAD_GRAYSCALE)
+    #print(user_fingerprint)
     kp2, des2 = get_descriptors(user_fingerprint)
 
     bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
