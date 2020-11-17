@@ -49,5 +49,11 @@ namespace APS_6.Infra.Data.Sql.Repository
             _context.Set<User>().Remove(GetUserByUserName(userName));
             _context.SaveChanges();
         }
+
+        public User Login(string name, string password)
+            => _context.Users
+                .AsNoTracking()
+                .Where(u => u.UserName == name && u.Password == password)
+                .FirstOrDefault();
     }
 }

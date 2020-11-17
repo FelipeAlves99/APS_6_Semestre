@@ -34,14 +34,15 @@ namespace APS_6.Domain.Services
         public User Login(string name, string password, string fingerPath)
         {
             var result = _repository.Login(name, password);
-            if (result == null)
-                result = new User("", "", "", Enums.EAccessLevel.None);
 
             var fingerResult = RunCmd(@"C:\Users\FELIPEDECARVALHOALVE\repos\APS_6_Semestre\src\APS.FirgerprintRecognition\APS.FirgerprintRecognition.py",
                 $@"-un { name } -fp { fingerPath }");
 
-            if (fingerResult == "Failed")
+            if (fingerResult == "Failed" || result == null)
+            {
+                result = new User("", "", "", Enums.EAccessLevel.None);
                 result.AddNotification("Username/password", "O nome de usuário, senha ou digital estão incorretas");
+            }
 
             return result;
         }
