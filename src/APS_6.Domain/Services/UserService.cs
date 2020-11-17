@@ -1,6 +1,7 @@
 ﻿using APS_6.Domain.Entities;
 using APS_6.Domain.Interfaces.Repository;
 using APS_6.Domain.Interfaces.Services;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -16,9 +17,9 @@ namespace APS_6.Domain.Services
             _repository = repository;
         }
 
-        public void DeleteUser(string userName)
+        public void DeleteUser(Guid id)
         {
-            _repository.DeleteUser(userName);
+            _repository.DeleteUser(id);
         }
 
         public IEnumerable<User> GetAllUsers()
@@ -63,6 +64,7 @@ namespace APS_6.Domain.Services
             start.FileName = @"C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\python.exe";
             start.Arguments = string.Format("{0} {1}", cmd, args);
             start.UseShellExecute = false;
+            start.CreateNoWindow = true;
             start.RedirectStandardOutput = true;
             using (Process process = Process.Start(start))
             {

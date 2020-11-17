@@ -2,6 +2,7 @@
 using APS_6.Domain.Interfaces.Repository;
 using APS_6.Infra.Data.Sql.Data.Context;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -44,9 +45,10 @@ namespace APS_6.Infra.Data.Sql.Repository
                 .ToList();
         }
 
-        public void DeleteUser(string userName)
+        public void DeleteUser(Guid id)
         {
-            _context.Set<User>().Remove(GetUserByUserName(userName));
+            _context.Set<User>().Remove
+                (_context.Users.AsNoTracking().FirstOrDefault(u => u.Id == id));
             _context.SaveChanges();
         }
 

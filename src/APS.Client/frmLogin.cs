@@ -1,5 +1,6 @@
 ﻿using APS_6.Domain.Interfaces.Services;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace APS.ClientTest
@@ -24,19 +25,19 @@ namespace APS.ClientTest
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //if (!string.IsNullOrEmpty(fingerPath))
-            //{
-            //var user = _userService.Login(txtUserName.Text, txtPassword.Text, fingerPath);
+            if (!string.IsNullOrEmpty(fingerPath))
+            {
+                var user = _userService.Login(txtUserName.Text, txtPassword.Text, fingerPath);
 
-            //if (user.Valid)
-            //{
-            frmMenu menu = new frmMenu(null, this, _userService, _ticketService, _ruralPropertyService, _pesticideService);
-            menu.Show();
-            this.Hide();
-            //}
-            //else
-            //    MessageBox.Show($@"Um erro ocorreu: {user.Notifications.FirstOrDefault().Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+                if (user.Valid)
+                {
+                    frmMenu menu = new frmMenu(user, this, _userService, _ticketService, _ruralPropertyService, _pesticideService);
+                    menu.Show();
+                    this.Hide();
+                }
+                else
+                    MessageBox.Show($@"Um erro ocorreu: {user.Notifications.FirstOrDefault().Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSelectFingerprint_Click(object sender, EventArgs e)

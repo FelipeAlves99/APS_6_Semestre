@@ -26,7 +26,7 @@ namespace APS.ClientTest
             _pesticideService = pesticideService;
             _user = user;
             _frm_Login = frm_Login;
-            //SetPermissions(_user);
+            SetPermissions(_user);
         }
 
         private void SetPermissions(User user)
@@ -81,6 +81,13 @@ namespace APS.ClientTest
         private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnConsultUser_Click(object sender, EventArgs e)
+        {
+            frmConsultUser consultUser = new frmConsultUser(_userService);
+            consultUser.MdiParent = this;
+            consultUser.Show();
         }
     }
 }

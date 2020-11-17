@@ -85,6 +85,7 @@ namespace APS.ClientTest
             this.btnConsultUser.TabIndex = 9;
             this.btnConsultUser.Text = "Consultar Usuário";
             this.btnConsultUser.UseVisualStyleBackColor = true;
+            this.btnConsultUser.Click += new System.EventHandler(this.btnConsultUser_Click);
             // 
             // btnConsultPesticide
             // 
