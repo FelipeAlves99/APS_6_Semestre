@@ -15,10 +15,4 @@
     <ProjectReference Include="..\APS_6.Infra.Data.Sql\APS_6.Infra.Data.Sql.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="PropertyForms\" />
-    <Folder Include="TicketForms\" />
-    <Folder Include="PesticideForms\" />
-  </ItemGroup>
-
 </Project>
