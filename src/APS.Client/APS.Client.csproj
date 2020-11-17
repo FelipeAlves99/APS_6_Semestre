@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\APS_6.Domain\APS_6.Domain.csproj" />
+    <ProjectReference Include="..\APS_6.Infra.Data.Sql\APS_6.Infra.Data.Sql.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="PropertyForms\" />
+    <Folder Include="TicketForms\" />
+    <Folder Include="PesticideForms\" />
+  </ItemGroup>
+
+</Project>
