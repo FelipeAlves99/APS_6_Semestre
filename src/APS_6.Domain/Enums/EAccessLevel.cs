@@ -5,6 +5,7 @@
         Admin,
         Manager,
         Analyst,
-        Reporter
+        Reporter,
+        None
     }
 }

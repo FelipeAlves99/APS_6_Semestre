@@ -5,10 +5,11 @@ namespace APS_6.Domain.Interfaces.Repository
 {
     public interface IUserRepository
     {
-        void PostUser(User user);        
-        void PatchUser(User user);        
-        User GetUserByUserName(string userName);        
-        IEnumerable<User> GetAllUsers();        
-        void DeleteUser(string userName);        
+        void PostUser(User user);
+        void PatchUser(User user);
+        User GetUserByUserName(string userName);
+        IEnumerable<User> GetAllUsers();
+        void DeleteUser(string userName);
+        User Login(string name, string password);
     }
 }

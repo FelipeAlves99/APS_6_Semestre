@@ -10,5 +10,6 @@ namespace APS_6.Domain.Interfaces.Services
         User GetUserByUserName(string userName);
         IEnumerable<User> GetAllUsers();
         void DeleteUser(string userName);
+        User Login(string name, string password, string fingerPath);
     }
 }
