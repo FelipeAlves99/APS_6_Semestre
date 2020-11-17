@@ -48,6 +48,7 @@ namespace APS.ClientTest
             this.btnRegisterProperty.TabIndex = 2;
             this.btnRegisterProperty.Text = "Cadastrar Propriedade";
             this.btnRegisterProperty.UseVisualStyleBackColor = true;
+            this.btnRegisterProperty.Click += new System.EventHandler(this.btnRegisterProperty_Click);
             // 
             // btnRegisterTicket
             // 
@@ -57,6 +58,7 @@ namespace APS.ClientTest
             this.btnRegisterTicket.TabIndex = 3;
             this.btnRegisterTicket.Text = "Cadastrar Ticket";
             this.btnRegisterTicket.UseVisualStyleBackColor = true;
+            this.btnRegisterTicket.Click += new System.EventHandler(this.btnRegisterTicket_Click);
             // 
             // btnRegisterPesticide
             // 
@@ -66,6 +68,7 @@ namespace APS.ClientTest
             this.btnRegisterPesticide.TabIndex = 4;
             this.btnRegisterPesticide.Text = "Cadastrar Pesticida";
             this.btnRegisterPesticide.UseVisualStyleBackColor = true;
+            this.btnRegisterPesticide.Click += new System.EventHandler(this.btnRegisterPesticide_Click);
             // 
             // btnRegisterUser
             // 
@@ -95,6 +98,7 @@ namespace APS.ClientTest
             this.btnConsultPesticide.TabIndex = 8;
             this.btnConsultPesticide.Text = "Consultar Pesticida";
             this.btnConsultPesticide.UseVisualStyleBackColor = true;
+            this.btnConsultPesticide.Click += new System.EventHandler(this.btnConsultPesticide_Click);
             // 
             // btnConsultTicket
             // 
@@ -104,6 +108,7 @@ namespace APS.ClientTest
             this.btnConsultTicket.TabIndex = 7;
             this.btnConsultTicket.Text = "Consultar Ticket";
             this.btnConsultTicket.UseVisualStyleBackColor = true;
+            this.btnConsultTicket.Click += new System.EventHandler(this.btnConsultTicket_Click);
             // 
             // btnConsultProperty
             // 
@@ -113,6 +118,7 @@ namespace APS.ClientTest
             this.btnConsultProperty.TabIndex = 6;
             this.btnConsultProperty.Text = "Consultar Propriedade";
             this.btnConsultProperty.UseVisualStyleBackColor = true;
+            this.btnConsultProperty.Click += new System.EventHandler(this.btnConsultProperty_Click);
             // 
             // btnLogoff
             // 

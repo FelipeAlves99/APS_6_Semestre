@@ -1,4 +1,7 @@
-﻿using APS.Client.UserForms;
+﻿using APS.Client.PesticideForms;
+using APS.Client.PropertyForms;
+using APS.Client.TicketForms;
+using APS.Client.UserForms;
 using APS_6.Domain.Entities;
 using APS_6.Domain.Enums;
 using APS_6.Domain.Interfaces.Services;
@@ -78,16 +81,58 @@ namespace APS.ClientTest
             frmRegisterUser.Show();
         }
 
-        private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btnConsultUser_Click(object sender, EventArgs e)
         {
             frmConsultUser consultUser = new frmConsultUser(_userService);
             consultUser.MdiParent = this;
             consultUser.Show();
+        }
+
+        private void btnRegisterProperty_Click(object sender, EventArgs e)
+        {
+            frmRegisterProperty registerProperty = new frmRegisterProperty();
+            registerProperty.MdiParent = this;
+            registerProperty.Show();
+        }
+
+        private void btnRegisterTicket_Click(object sender, EventArgs e)
+        {
+            frmRegisterTicket registerTicket = new frmRegisterTicket();
+            registerTicket.MdiParent = this;
+            registerTicket.Show();
+        }
+
+        private void btnRegisterPesticide_Click(object sender, EventArgs e)
+        {
+            frmRegisterPesticide registerPesticide = new frmRegisterPesticide();
+            registerPesticide.MdiParent = this;
+            registerPesticide.Show();
+        }
+
+        private void btnConsultProperty_Click(object sender, EventArgs e)
+        {
+            frmConsultProperty consultProperty = new frmConsultProperty();
+            consultProperty.MdiParent = this;
+            consultProperty.Show();
+        }
+
+        private void btnConsultTicket_Click(object sender, EventArgs e)
+        {
+            frmConsultTicket consultTicket = new frmConsultTicket();
+            consultTicket.MdiParent = this;
+            consultTicket.Show();
+        }
+
+        private void btnConsultPesticide_Click(object sender, EventArgs e)
+        {
+            frmConsultPesticide consultPesticide = new frmConsultPesticide();
+            consultPesticide.MdiParent = this;
+            consultPesticide.Show();
+        }
+
+        private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _frm_Login.Show();
         }
     }
 }
