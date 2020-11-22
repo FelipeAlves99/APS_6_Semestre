@@ -32,10 +32,10 @@ namespace APS.Client.PesticideForms
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.cmbIsLegal = new System.Windows.Forms.ComboBox();
+            this.cmbToxicity = new System.Windows.Forms.ComboBox();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -65,49 +65,50 @@ namespace APS.Client.PesticideForms
             this.label3.TabIndex = 2;
             this.label3.Text = "Nível de toxidade";
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(259, 23);
-            this.textBox1.TabIndex = 3;
+            this.txtName.Location = new System.Drawing.Point(13, 33);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(259, 23);
+            this.txtName.TabIndex = 3;
             // 
-            // comboBox1
+            // cmbIsLegal
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(13, 100);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 4;
+            this.cmbIsLegal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbIsLegal.FormattingEnabled = true;
+            this.cmbIsLegal.Location = new System.Drawing.Point(13, 100);
+            this.cmbIsLegal.Name = "cmbIsLegal";
+            this.cmbIsLegal.Size = new System.Drawing.Size(121, 23);
+            this.cmbIsLegal.TabIndex = 4;
             // 
-            // comboBox2
+            // cmbToxicity
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(151, 100);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 23);
-            this.comboBox2.TabIndex = 5;
+            this.cmbToxicity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbToxicity.FormattingEnabled = true;
+            this.cmbToxicity.Location = new System.Drawing.Point(151, 100);
+            this.cmbToxicity.Name = "cmbToxicity";
+            this.cmbToxicity.Size = new System.Drawing.Size(121, 23);
+            this.cmbToxicity.TabIndex = 5;
             // 
-            // button1
+            // btnRegister
             // 
-            this.button1.Location = new System.Drawing.Point(200, 145);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Cadastrar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnRegister.Location = new System.Drawing.Point(200, 145);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(75, 23);
+            this.btnRegister.TabIndex = 6;
+            this.btnRegister.Text = "Cadastrar";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // frmRegisterPesticide
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(287, 180);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnRegister);
+            this.Controls.Add(this.cmbToxicity);
+            this.Controls.Add(this.cmbIsLegal);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -117,6 +118,7 @@ namespace APS.Client.PesticideForms
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrar Pesticida";
+            this.Load += new System.EventHandler(this.frmRegisterPesticide_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,9 +129,9 @@ namespace APS.Client.PesticideForms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.ComboBox cmbIsLegal;
+        private System.Windows.Forms.ComboBox cmbToxicity;
+        private System.Windows.Forms.Button btnRegister;
     }
 }

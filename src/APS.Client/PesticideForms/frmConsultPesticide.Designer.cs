@@ -29,52 +29,55 @@ namespace APS.Client.PesticideForms
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.cmbToxicity = new System.Windows.Forms.ComboBox();
+            this.cmbIsLegal = new System.Windows.Forms.ComboBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPesticides = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPesticides)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnEdit
             // 
-            this.button1.Location = new System.Drawing.Point(198, 333);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Editar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEdit.Location = new System.Drawing.Point(198, 333);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 13;
+            this.btnEdit.Text = "Editar";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // comboBox2
+            // cmbToxicity
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(152, 283);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 23);
-            this.comboBox2.TabIndex = 12;
+            this.cmbToxicity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbToxicity.Enabled = false;
+            this.cmbToxicity.FormattingEnabled = true;
+            this.cmbToxicity.Location = new System.Drawing.Point(152, 283);
+            this.cmbToxicity.Name = "cmbToxicity";
+            this.cmbToxicity.Size = new System.Drawing.Size(121, 23);
+            this.cmbToxicity.TabIndex = 12;
             // 
-            // comboBox1
+            // cmbIsLegal
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(14, 283);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 11;
+            this.cmbIsLegal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbIsLegal.Enabled = false;
+            this.cmbIsLegal.FormattingEnabled = true;
+            this.cmbIsLegal.Location = new System.Drawing.Point(14, 283);
+            this.cmbIsLegal.Name = "cmbIsLegal";
+            this.cmbIsLegal.Size = new System.Drawing.Size(121, 23);
+            this.cmbIsLegal.TabIndex = 11;
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.Location = new System.Drawing.Point(14, 221);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(259, 23);
-            this.textBox1.TabIndex = 10;
+            this.txtName.Enabled = false;
+            this.txtName.Location = new System.Drawing.Point(14, 221);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(259, 23);
+            this.txtName.TabIndex = 10;
             // 
             // label3
             // 
@@ -103,14 +106,18 @@ namespace APS.Client.PesticideForms
             this.label1.TabIndex = 7;
             this.label1.Text = "Nome do pesticida";
             // 
-            // dataGridView1
+            // dgvPesticides
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(14, 31);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(258, 150);
-            this.dataGridView1.TabIndex = 14;
+            this.dgvPesticides.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPesticides.Location = new System.Drawing.Point(14, 31);
+            this.dgvPesticides.MultiSelect = false;
+            this.dgvPesticides.Name = "dgvPesticides";
+            this.dgvPesticides.ReadOnly = true;
+            this.dgvPesticides.RowTemplate.Height = 25;
+            this.dgvPesticides.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPesticides.Size = new System.Drawing.Size(258, 150);
+            this.dgvPesticides.TabIndex = 14;
+            this.dgvPesticides.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPesticides_CellClick);
             // 
             // label4
             // 
@@ -121,27 +128,17 @@ namespace APS.Client.PesticideForms
             this.label4.TabIndex = 15;
             this.label4.Text = "Pesticidas";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(117, 333);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Deletar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // frmConsultPesticide
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(282, 371);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dgvPesticides);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.cmbToxicity);
+            this.Controls.Add(this.cmbIsLegal);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -151,7 +148,8 @@ namespace APS.Client.PesticideForms
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar pesticidas";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmConsultPesticide_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPesticides)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,15 +157,14 @@ namespace APS.Client.PesticideForms
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.ComboBox cmbToxicity;
+        private System.Windows.Forms.ComboBox cmbIsLegal;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPesticides;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button2;
     }
 }
