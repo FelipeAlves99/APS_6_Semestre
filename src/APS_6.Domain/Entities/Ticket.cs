@@ -18,8 +18,8 @@ namespace APS_6.Domain.Entities
             RuralProperty = ruralProperty;
         }
 
-        public DateTime CreationDate { get; }
-        public DateTime DeadlineDate { get; }
+        public DateTime CreationDate { get; private set; }
+        public DateTime DeadlineDate { get; private set; }
         public double Value { get; private set; }
         public string Description { get; private set; }
         public ETicketStatus Status { get; private set; }

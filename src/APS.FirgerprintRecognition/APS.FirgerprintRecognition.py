@@ -34,11 +34,11 @@ def main():
     f, axarr = plt.subplots(1,2)
     axarr[0].imshow(fingerprint_keypoints)
     axarr[1].imshow(user_keypoints)
-    #plt.show()
+    plt.show()
 
     fingerprint_matches = cv2.drawMatches(fingerprint_img, kp1, user_fingerprint, kp2, matches, flags=2, outImg=None)
     plt.imshow(fingerprint_matches)
-    #plt.show()
+    plt.show()
 
     #Score calculation
     score = 0

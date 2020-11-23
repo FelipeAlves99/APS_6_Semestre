@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Flunt.Validations;
+using System.Collections.Generic;
 
 namespace APS_6.Domain.Entities
 {
@@ -17,19 +18,39 @@ namespace APS_6.Domain.Entities
             State = state;
             PesticideRuralProperties = pesticideRuralProperties;
             Tickets = tickets;
+
+            Validate();
+        }
+
+        private void Validate()
+        {
+            AddNotifications(new Contract()
+                .Requires()
+                .HasExactLengthIfNotNullOrEmpty(State, 2, "State", "O estado deve ser apenas a sigla de dois digitos")
+                .HasMaxLen(CompanyName, 50, "CompanyName", "O nome da propriedade deve ter no máximo 50 caracteres")
+                .HasMaxLen(Street, 50, "Street", "A rua deve ter no máximo 50 caracteres")
+                .HasMaxLen(District, 50, "District", "O bairro deve ter no máximo 50 caracteres")
+                .HasMaxLen(City, 30, "City", "O nome da cidade deve ter no máximo 30 caracteres")
+            );
         }
 
         private RuralProperty()
         { }
 
-        public string CompanyName { get; set; }
-        public string Street { get; set; }
-        public int BuildingNumber { get; set; }
-        public string District { get; set; }
-        public string PostalCode { get; set; }
-        public string City { get; set; }
-        public string State { get; set; }
-        public ICollection<PesticideRuralProperty> PesticideRuralProperties { get; set; }
-        public ICollection<Ticket> Tickets { get; set; }
+        public string CompanyName { get; private set; }
+        public string Street { get; private set; }
+        public int BuildingNumber { get; private set; }
+        public string District { get; private set; }
+        public string PostalCode { get; private set; }
+        public string City { get; private set; }
+        public string State { get; private set; }
+        public ICollection<PesticideRuralProperty> PesticideRuralProperties { get; private set; }
+        public ICollection<Ticket> Tickets { get; private set; }
+
+        public void AddTicket(Ticket ticket)
+        {
+            Tickets.Add(ticket);
+            AddNotifications(ticket);
+        }
     }
 }

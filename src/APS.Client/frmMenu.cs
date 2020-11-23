@@ -90,42 +90,42 @@ namespace APS.ClientTest
 
         private void btnRegisterProperty_Click(object sender, EventArgs e)
         {
-            frmRegisterProperty registerProperty = new frmRegisterProperty();
+            frmRegisterProperty registerProperty = new frmRegisterProperty(_ruralPropertyService);
             registerProperty.MdiParent = this;
             registerProperty.Show();
         }
 
         private void btnRegisterTicket_Click(object sender, EventArgs e)
         {
-            frmRegisterTicket registerTicket = new frmRegisterTicket();
+            frmRegisterTicket registerTicket = new frmRegisterTicket(_ticketService, _ruralPropertyService);
             registerTicket.MdiParent = this;
             registerTicket.Show();
         }
 
         private void btnRegisterPesticide_Click(object sender, EventArgs e)
         {
-            frmRegisterPesticide registerPesticide = new frmRegisterPesticide();
+            frmRegisterPesticide registerPesticide = new frmRegisterPesticide(_pesticideService);
             registerPesticide.MdiParent = this;
             registerPesticide.Show();
         }
 
         private void btnConsultProperty_Click(object sender, EventArgs e)
         {
-            frmConsultProperty consultProperty = new frmConsultProperty();
+            frmConsultProperty consultProperty = new frmConsultProperty(_ruralPropertyService);
             consultProperty.MdiParent = this;
             consultProperty.Show();
         }
 
         private void btnConsultTicket_Click(object sender, EventArgs e)
         {
-            frmConsultTicket consultTicket = new frmConsultTicket();
+            frmConsultTicket consultTicket = new frmConsultTicket(_ticketService);
             consultTicket.MdiParent = this;
             consultTicket.Show();
         }
 
         private void btnConsultPesticide_Click(object sender, EventArgs e)
         {
-            frmConsultPesticide consultPesticide = new frmConsultPesticide();
+            frmConsultPesticide consultPesticide = new frmConsultPesticide(_pesticideService);
             consultPesticide.MdiParent = this;
             consultPesticide.Show();
         }

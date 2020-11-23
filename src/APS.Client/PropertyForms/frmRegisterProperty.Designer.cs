@@ -36,15 +36,15 @@ namespace APS.Client.PropertyForms
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtStreet = new System.Windows.Forms.TextBox();
+            this.txtDistrict = new System.Windows.Forms.TextBox();
+            this.txtCity = new System.Windows.Forms.TextBox();
+            this.txtNumber = new System.Windows.Forms.TextBox();
+            this.txtState = new System.Windows.Forms.TextBox();
+            this.btnRegister = new System.Windows.Forms.Button();
+            this.btnClean = new System.Windows.Forms.Button();
+            this.mtbCep = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -110,88 +110,91 @@ namespace APS.Client.PropertyForms
             this.label7.TabIndex = 6;
             this.label7.Text = "Estado";
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.Location = new System.Drawing.Point(18, 36);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(337, 23);
-            this.textBox1.TabIndex = 7;
+            this.txtName.Location = new System.Drawing.Point(18, 36);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(337, 23);
+            this.txtName.TabIndex = 7;
             // 
-            // textBox2
+            // txtStreet
             // 
-            this.textBox2.Location = new System.Drawing.Point(18, 110);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(146, 23);
-            this.textBox2.TabIndex = 8;
+            this.txtStreet.Location = new System.Drawing.Point(18, 110);
+            this.txtStreet.Name = "txtStreet";
+            this.txtStreet.Size = new System.Drawing.Size(146, 23);
+            this.txtStreet.TabIndex = 8;
             // 
-            // textBox3
+            // txtDistrict
             // 
-            this.textBox3.Location = new System.Drawing.Point(18, 184);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(146, 23);
-            this.textBox3.TabIndex = 9;
+            this.txtDistrict.Location = new System.Drawing.Point(18, 184);
+            this.txtDistrict.Name = "txtDistrict";
+            this.txtDistrict.Size = new System.Drawing.Size(146, 23);
+            this.txtDistrict.TabIndex = 9;
             // 
-            // textBox4
+            // txtCity
             // 
-            this.textBox4.Location = new System.Drawing.Point(18, 258);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(146, 23);
-            this.textBox4.TabIndex = 10;
+            this.txtCity.Location = new System.Drawing.Point(18, 258);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Size = new System.Drawing.Size(146, 23);
+            this.txtCity.TabIndex = 10;
             // 
-            // textBox5
+            // txtNumber
             // 
-            this.textBox5.Location = new System.Drawing.Point(208, 110);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(146, 23);
-            this.textBox5.TabIndex = 11;
+            this.txtNumber.Location = new System.Drawing.Point(208, 110);
+            this.txtNumber.Name = "txtNumber";
+            this.txtNumber.Size = new System.Drawing.Size(146, 23);
+            this.txtNumber.TabIndex = 11;
+            this.txtNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumber_KeyPress);
             // 
-            // textBox7
+            // txtState
             // 
-            this.textBox7.Location = new System.Drawing.Point(208, 258);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(146, 23);
-            this.textBox7.TabIndex = 13;
+            this.txtState.Location = new System.Drawing.Point(208, 258);
+            this.txtState.Name = "txtState";
+            this.txtState.Size = new System.Drawing.Size(146, 23);
+            this.txtState.TabIndex = 13;
             // 
-            // button1
+            // btnRegister
             // 
-            this.button1.Location = new System.Drawing.Point(279, 317);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Cadastrar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnRegister.Location = new System.Drawing.Point(279, 317);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(75, 23);
+            this.btnRegister.TabIndex = 14;
+            this.btnRegister.Text = "Cadastrar";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // button2
+            // btnClean
             // 
-            this.button2.Location = new System.Drawing.Point(198, 317);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Limpar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnClean.Location = new System.Drawing.Point(198, 317);
+            this.btnClean.Name = "btnClean";
+            this.btnClean.Size = new System.Drawing.Size(75, 23);
+            this.btnClean.TabIndex = 15;
+            this.btnClean.Text = "Limpar";
+            this.btnClean.UseVisualStyleBackColor = true;
+            this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
             // 
-            // maskedTextBox1
+            // mtbCep
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(208, 184);
-            this.maskedTextBox1.Mask = "00000-000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(146, 23);
-            this.maskedTextBox1.TabIndex = 16;
+            this.mtbCep.Location = new System.Drawing.Point(208, 184);
+            this.mtbCep.Mask = "00000-000";
+            this.mtbCep.Name = "mtbCep";
+            this.mtbCep.Size = new System.Drawing.Size(146, 23);
+            this.mtbCep.TabIndex = 16;
             // 
             // frmRegisterProperty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(372, 359);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.mtbCep);
+            this.Controls.Add(this.btnClean);
+            this.Controls.Add(this.btnRegister);
+            this.Controls.Add(this.txtState);
+            this.Controls.Add(this.txtNumber);
+            this.Controls.Add(this.txtCity);
+            this.Controls.Add(this.txtDistrict);
+            this.Controls.Add(this.txtStreet);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -220,13 +223,14 @@ namespace APS.Client.PropertyForms
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.TextBox txtStreet;
+        private System.Windows.Forms.TextBox txtDistrict;
+        private System.Windows.Forms.TextBox txtCity;
+        private System.Windows.Forms.TextBox txtNumber;
+        private System.Windows.Forms.TextBox txtState;
+        private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.Button btnClean;
+        private System.Windows.Forms.MaskedTextBox mtbCep;
+        private System.Windows.Forms.TextBox txtName;
     }
 }

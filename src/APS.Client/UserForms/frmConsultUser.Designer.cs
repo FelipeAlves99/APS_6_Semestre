@@ -119,6 +119,7 @@ namespace APS.Client.UserForms
             // 
             // cmbPermission
             // 
+            this.cmbPermission.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPermission.Enabled = false;
             this.cmbPermission.FormattingEnabled = true;
             this.cmbPermission.Location = new System.Drawing.Point(265, 110);

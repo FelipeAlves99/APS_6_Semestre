@@ -33,19 +33,16 @@ namespace APS.Client.TicketForms
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.mtbEndDate = new System.Windows.Forms.MaskedTextBox();
+            this.mtbStartDate = new System.Windows.Forms.MaskedTextBox();
+            this.txtValue = new System.Windows.Forms.TextBox();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.btnRegister = new System.Windows.Forms.Button();
+            this.btnClean = new System.Windows.Forms.Button();
+            this.dgvProperties = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -84,15 +81,6 @@ namespace APS.Client.TicketForms
             this.label4.TabIndex = 3;
             this.label4.Text = "Descrição";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 278);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(163, 15);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Pesquisar empresa por nome:";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -102,121 +90,98 @@ namespace APS.Client.TicketForms
             this.label6.TabIndex = 5;
             this.label6.Text = "Status";
             // 
-            // maskedTextBox1
+            // mtbEndDate
             // 
-            this.maskedTextBox1.Enabled = false;
-            this.maskedTextBox1.Location = new System.Drawing.Point(168, 31);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(121, 23);
-            this.maskedTextBox1.TabIndex = 7;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.mtbEndDate.Enabled = false;
+            this.mtbEndDate.Location = new System.Drawing.Point(168, 31);
+            this.mtbEndDate.Mask = "00/00/0000";
+            this.mtbEndDate.Name = "mtbEndDate";
+            this.mtbEndDate.Size = new System.Drawing.Size(121, 23);
+            this.mtbEndDate.TabIndex = 7;
+            this.mtbEndDate.ValidatingType = typeof(System.DateTime);
             // 
-            // maskedTextBox2
+            // mtbStartDate
             // 
-            this.maskedTextBox2.Enabled = false;
-            this.maskedTextBox2.Location = new System.Drawing.Point(13, 31);
-            this.maskedTextBox2.Mask = "00/00/0000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(111, 23);
-            this.maskedTextBox2.TabIndex = 8;
-            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
+            this.mtbStartDate.Enabled = false;
+            this.mtbStartDate.Location = new System.Drawing.Point(13, 31);
+            this.mtbStartDate.Mask = "00/00/0000";
+            this.mtbStartDate.Name = "mtbStartDate";
+            this.mtbStartDate.Size = new System.Drawing.Size(111, 23);
+            this.mtbStartDate.TabIndex = 8;
+            this.mtbStartDate.ValidatingType = typeof(System.DateTime);
             // 
-            // textBox1
+            // txtValue
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 101);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(111, 23);
-            this.textBox1.TabIndex = 9;
+            this.txtValue.Location = new System.Drawing.Point(13, 101);
+            this.txtValue.Name = "txtValue";
+            this.txtValue.Size = new System.Drawing.Size(111, 23);
+            this.txtValue.TabIndex = 9;
             // 
-            // textBox2
+            // txtDescription
             // 
-            this.textBox2.Location = new System.Drawing.Point(13, 179);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(276, 65);
-            this.textBox2.TabIndex = 10;
+            this.txtDescription.Location = new System.Drawing.Point(13, 179);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(276, 65);
+            this.txtDescription.TabIndex = 10;
             // 
-            // comboBox1
+            // cmbStatus
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Enabled = false;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(168, 100);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 11;
+            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStatus.Enabled = false;
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Location = new System.Drawing.Point(168, 100);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(121, 23);
+            this.cmbStatus.TabIndex = 11;
             // 
-            // textBox3
+            // btnRegister
             // 
-            this.textBox3.Location = new System.Drawing.Point(179, 275);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(110, 23);
-            this.textBox3.TabIndex = 12;
+            this.btnRegister.Location = new System.Drawing.Point(213, 389);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(75, 23);
+            this.btnRegister.TabIndex = 17;
+            this.btnRegister.Text = "Cadastrar";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // label7
+            // btnClean
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 315);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(110, 15);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Nome da empresa: ";
+            this.btnClean.Location = new System.Drawing.Point(132, 389);
+            this.btnClean.Name = "btnClean";
+            this.btnClean.Size = new System.Drawing.Size(75, 23);
+            this.btnClean.TabIndex = 18;
+            this.btnClean.Text = "Limpar";
+            this.btnClean.UseVisualStyleBackColor = true;
+            this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
             // 
-            // label9
+            // dgvProperties
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 363);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(50, 15);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Cidade: ";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(13, 339);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(45, 15);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "Estado:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(213, 389);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Cadastrar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(132, 389);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Limpar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.dgvProperties.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProperties.Location = new System.Drawing.Point(12, 250);
+            this.dgvProperties.MultiSelect = false;
+            this.dgvProperties.Name = "dgvProperties";
+            this.dgvProperties.ReadOnly = true;
+            this.dgvProperties.RowTemplate.Height = 25;
+            this.dgvProperties.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProperties.Size = new System.Drawing.Size(276, 133);
+            this.dgvProperties.TabIndex = 19;
+            this.dgvProperties.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProperties_CellClick);
             // 
             // frmRegisterTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(302, 424);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.maskedTextBox2);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.dgvProperties);
+            this.Controls.Add(this.btnClean);
+            this.Controls.Add(this.btnRegister);
+            this.Controls.Add(this.cmbStatus);
+            this.Controls.Add(this.txtDescription);
+            this.Controls.Add(this.txtValue);
+            this.Controls.Add(this.mtbStartDate);
+            this.Controls.Add(this.mtbEndDate);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -227,6 +192,7 @@ namespace APS.Client.TicketForms
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de tickets";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProperties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,18 +204,14 @@ namespace APS.Client.TicketForms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.MaskedTextBox mtbEndDate;
+        private System.Windows.Forms.MaskedTextBox mtbStartDate;
+        private System.Windows.Forms.TextBox txtValue;
+        private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.Button btnClean;
+        private System.Windows.Forms.DataGridView dgvProperties;
     }
 }
